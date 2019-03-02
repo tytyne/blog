@@ -1,0 +1,20 @@
+{% extends 'base.html'%} {% import 'macros.html' as macro%} {% import "bootstrap/wtf.html" as wtf %}
+<!-- Content block -->
+{%block content%}
+<div class="container" style="font-family: 'Indie Flower', cursive;">
+    <div class="row">
+
+        <p>{{blog.blog}}</p>
+        <span>
+            <p>Posted on {{date}} by {{blog.user.username| capitalize}}</p>
+            
+        </span>
+
+    </div>
+    <div class="row">
+        <h4>Comments</h4>
+        <hr> {% if current_user.is_authenticated %} {{ wtf.quick_form(CommentForm) }} {%endif%} {{macro.displayComments(comment)}}
+    </div>
+
+</div>
+{%endblock%}
