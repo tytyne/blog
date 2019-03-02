@@ -6,14 +6,14 @@
 
         <p>{{blog.blog}}</p>
         <span>
-            <p>Posted on {{date}} by {{blog.user.username| capitalize}}</p>
+            <p>Posted on {{date}} by {{blog.writer.writername| capitalize}}</p>
             
         </span>
 
     </div>
     <div class="row">
         <h4>Comments</h4>
-        <hr> {% if current_user.is_authenticated %} {{ wtf.quick_form(CommentForm) }} {%endif%} {{macro.displayComments(comment)}}
+        <hr> {% if current_writer.is_authenticated %} {{ wtf.quick_form(CommentForm) }} {%endif%} {{macro.displayComments(comment)}}
     </div>
 
 </div>
