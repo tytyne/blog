@@ -2,8 +2,8 @@ import os
 
 class Config:
 
-    PITCH_API_BASE_URL = 'https://api.thepitchdb.org/3/pitch/{}?api_key={}'
-    PITCH_API_KEY = os.environ.get('PITCH_API_KEY')
+    QUOTE_API_BASE_URL = "http://quotes.stormconsultancy.co.uk/random.json"
+    QUOTE_API_KEY = os.environ.get('QUOTE_API_KEY')
     SECRET_KEY = os.environ.get('SECRET_KEY')
     SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://wecode:flora123@localhost/blog'
     UPLOADED_PHOTOS_DEST ='app/static/photos'
@@ -27,7 +27,7 @@ class ProdConfig(Config):
 
 class TestConfig(Config):
     SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://wecode:flora123@localhost/blog'
-
+    DEBUG = True
 class DevConfig(Config):
     SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://wecode:flora123@localhost/blog'
     DEBUG = True

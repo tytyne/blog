@@ -13,7 +13,7 @@
     </div>
     <div class="row">
         <h4>Comments</h4>
-        <hr> {% if current_writer.is_authenticated %} {{ wtf.quick_form(CommentForm) }} {%endif%} {{macro.displayComments(comment)}}
+        <hr> {% if current_user.is_authenticated %} {{ wtf.quick_form(CommentForm) }} {%endif%} {{macro.displayComments(comment)}}
     </div>
 
 </div>

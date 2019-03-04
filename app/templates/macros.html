@@ -1,15 +1,31 @@
-{% macro displayblogs(blogs_list)%} {%for blog in blogs_list%}
-<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 review-card">
-    <div class="well well-lg">
+{% macro displayPosts(posts) %} {% for post in posts %}
 
-        <p>{{blog.blog| truncate(100)}}</p>
-        <p>Written by: {{blog.writer.writername}} <a href="/blog/{{blog.id}}" class="btn btn-primary pull-right">Enter your pitch</a>
-        </p>
-    </div>
+<div class="container rr">
+    <img src="{{post.image}}" alt="">
+
+    <h3 class='title'>{{post.title}}</h3>
+    <p class="name">Author: la tytyne</p>
+
+    <p>{{post.content}}</p>
+    <a href="/post/{{post.id}}" class='post'>View comments</a><br>
+
+
+    <a href="/new/comment/{{post.id}}" class="btn btn-primary">Add comment</a>
+    <a href="/delete/post/{{post.id}}" class="btn btn-primary">Delete post</a>
+    <a href="/edit/post/{{post.id}}" class="btn btn-primary">Edit post</a>
 </div>
-{%endfor%} {%endmacro%} {%macro displayComments(comment_list)%} {%for comment in comment_list%}
-<div class="col-md-12">
-    <h5>{{comment.writer.writername}}</h5>
-    <p>{{comment.comment}}</p>
+
+
+{%endfor%} {%endmacro%} {% macro displayComments(comments) %} {% for comment in comments %}
+
+<div class="container kk">
+    <img src="static/photos/no_dp.png" alt="Display image" height='50' width='50'>
+    <h3 class="name">{{comment.username}}</h3>
+
+    <p>{{comment.content}}</p>
+    <a href="/delete/comment/{{comment.id}}" class="=btn btn-primary">Delete Comment</a>
 </div>
+
+
+
 {%endfor%} {%endmacro%}

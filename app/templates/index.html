@@ -1,34 +1,33 @@
- {% extends 'base.html' %} {% import 'macros.html' as macro %}
-<!-- < Content block -->
-{%block content%}
-<div class="jumbotron text-center" style="background-color:pink; color: rgb(17, 16, 16); margin: 10px -100px 30px -100px;">
-    <h1>Grab the chance Tell us about yourself</h1>
-</div>
+{% extends 'base.html'%} {% import 'macros.html' as macro%}
+<!-- {{ fontawesome_html() }} -->
+<!-- {% import "bootstrap/wtf.html" as wtf %} -->
 
+<!-- Styles block -->
+
+{% block styles%} {{ super() }}
+<link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}"> {% endblock %} {% block content %}
 <div class="container">
     <div class="row">
-        <div class="col-md-6">
-            <div class="well well-lg">
-                <h3 style="color: #372e5f;" class="text-center">business blog</h3>
-                <div class="row">
-                    <div class="col-md-4"></div>
-                    <div class="col-md-4"><a href="{{url_for('main.business')}}" class="btn -center" style="background-color:blueviolet; color: #fff;">View
-                            bloges</a></div>
-                    <div class="col-md-4"></div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="well well-lg">
-                <h3 style="color: #372e5f;" class="text-center">general blog</h3>
-                <div class="row">
-                    <div class="col-md-4"></div>
-                    <div class="col-md-4"><a href="{{url_for('main.general')}}" class="btn -center" style="background-color: rgb(85, 163, 236); color: #fff;">View
-                            bloges</a></div>
-                    <div class="col-md-4"></div>
-                </div>
-            </div>
-        </div>
+        <blockquote class="text-center text-lg">
+            <p>{{quote.content}}</p>
+            <footer><cite>{{quote.author}}</cite></footer>
+        </blockquote>
     </div>
 
-    {%endblock%}
+</div>
+{{ macro.displayPosts(posts)}}<br>
+<div class="container">
+    <a href="/post/new" class="btn btn-primary">Add Blog post</a>
+
+</div>
+
+<div id="sub">
+    <h3>If you want to receive notifications when new post is added.</h3>
+    <h2>Subscribe here</h2>
+    <div id='subscription' class='container'>
+
+        {{wtf.quick_form(subscription_form)}}
+    </div>
+</div>
+
+{% endblock %}
