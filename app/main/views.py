@@ -24,12 +24,12 @@ def index():
         db.session.add(new_subscriber)
         db.session.commit()
 
-        mail_message("Thank you for subscribing","email/welcome_user",new_subscriber.email,user=new_subscriber)
+        # mail_message("Thank you for subscribing","email/welcome_user",new_subscriber.email,user=new_subscriber)
 
         return redirect(url_for('main.index'))
   quote=get_quote()
   posts=Post.get_posts()
-  title="Home| Welcome to MeBlog"
+  title="Home| Welcome to our blog"
 
   return render_template('index.html',title=title,quote=quote,posts=posts,subscription_form=form)
 
