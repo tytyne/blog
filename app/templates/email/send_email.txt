@@ -1,0 +1,6 @@
+Hello {{user.name}}
+
+There is new Post on Our blog
+Title:{{post.title}}
+
+Please check it!!
