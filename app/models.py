@@ -67,9 +67,9 @@ class Comment(db.Model):
         return comments
 
     
-    def delete_comment(self):
-       db.session.delete(self)
-       db.session.commit()
+    # def delete_comment(self):
+    #    db.session.delete(self)
+    #    db.session.commit()
 
 
     # @classmethod
@@ -113,8 +113,6 @@ class Post(db.Model):
     # def get_commentss(cls,id):
     #     comments = Comment.query.filter_by(user_id=id).all()
     #     return comments
-
-
 
 class Subscription(db.Model):
      __tablename__='subscribers'
