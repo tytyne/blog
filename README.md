@@ -1,6 +1,6 @@
 # My Blog
 #### Blog is a web application where user can post the quote and see the blogs, March 01st 2019.
-### DUSABEYEZU.
+### DUSABEYEZU Flora.
 
 #### Description
 Blog is a web application where user can post the quote and see the blogs.and can subscribes to get the latest updates on post. Users can subscribe to the blog to get the latest updates on articles.The blog supports comments from readers and blog writers can determine whether to delete the comments or not. Users can also delete blog posts at their discretion.After the writer has posted a new blog post, subscribers will receive an email notification with a link to the blog post.
