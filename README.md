@@ -1,5 +1,5 @@
 # My Blog
-#### Blog is a web application where user can post the quote and see the blogs, March 01st 2019.
+#### Blog is a web application where user can post the quote and see the blogs, March 05st 2019.
 ### DUSABEYEZU.
 
 #### Description
