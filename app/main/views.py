@@ -76,8 +76,8 @@ def add_post():
         new_post.save_post()
 
         subscribers=Subscription.query.all()
-        for subscriber in subscribers:
-           mail_message("New Post","email/send_email",subscriber.email,user=subscriber,post=new_post)
+        # for subscriber in subscribers:
+        #    mail_message("New Post","email/send_email",subscriber.email,user=subscriber,post=new_post)
 
         return redirect(url_for('main.index'))
 
